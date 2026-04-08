@@ -7,10 +7,8 @@
 
 import { useEffect, useState } from "react";
 import heroBg from "../img/background.webp";
-import headshot from "../img/headshot.png";
 
 const HERO_BG = heroBg;
-const HEADSHOT = headshot;
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -53,33 +51,6 @@ export default function Hero() {
           zIndex: 2,
         }}
       />
-
-      {/* Headshot, right side */}
-      <div
-        className="absolute right-[3%] top-[5%] bottom-0 w-[42vw] max-w-[540px] pointer-events-none hidden lg:flex items-end"
-        style={{ zIndex: 1 }}
-      >
-        <div className="relative w-full h-full">
-          {/* Holographic glow ring behind photo */}
-          <div
-            className="absolute inset-0 rounded-full"
-            style={{
-              background: "radial-gradient(ellipse at center, rgba(0,245,255,0.15) 0%, rgba(191,95,255,0.1) 40%, transparent 70%)",
-              filter: "blur(40px)",
-              transform: "scale(1.1)",
-            }}
-          />
-          <img
-            src={HEADSHOT}
-            alt="Camryn Williams"
-            className="w-full h-full object-cover object-top"
-            style={{
-              maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-            }}
-          />
-        </div>
-      </div>
 
       {/* Content */}
       <div className="container relative z-10 pt-24 pb-20">

@@ -153,7 +153,7 @@ function vitePluginManusDebugCollector(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
-  base: '/camryn-williams/',
+  base: '/cami-website/',
   plugins,
   resolve: {
     alias: {

@@ -6,7 +6,7 @@
   <script>
     // Redirect 404s to index.html for client-side routing
     sessionStorage.setItem('redirect', location.href);
-    location.replace(location.pathname.split('/').slice(0, 2).join('/'));
+    location.replace('/' + location.pathname.split('/')[1]);
   </script>
 </head>
 <body>

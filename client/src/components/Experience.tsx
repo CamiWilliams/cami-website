@@ -9,7 +9,6 @@ const experiences = [
     company: "Meta",
     role: "Lead Developer Advocate, Developer Success Solutions",
     period: "2019 / Present",
-    location: "Cary, NC",
     current: true,
     accentColor: "#00f5ff",
     description:
@@ -30,7 +29,6 @@ const experiences = [
     company: "Amazon / Alexa",
     role: "Senior Technical Evangelist, Alexa",
     period: "Sep 2017 / Jun 2019",
-    location: "Seattle, WA",
     current: false,
     accentColor: "#bf5fff",
     description:
@@ -48,7 +46,6 @@ const experiences = [
     company: "Google",
     role: "Software Engineer",
     period: "Jul 2016 / Aug 2017",
-    location: "New York, NY",
     current: false,
     accentColor: "#7dff6b",
     description:
@@ -65,7 +62,6 @@ const experiences = [
     company: "Clarifai",
     role: "Software Engineer & Developer Evangelist",
     period: "Aug 2015 / Jun 2016",
-    location: "New York, NY",
     current: false,
     accentColor: "#ff2d78",
     description:
@@ -154,9 +150,6 @@ export default function Experience() {
               <div className="lg:col-span-3">
                 <div className="label-mono mb-1" style={{ color: exp.accentColor, opacity: 0.85 }}>
                   {exp.period}
-                </div>
-                <div className="label-mono text-[0.62rem]" style={{ color: "rgba(255,255,255,0.3)" }}>
-                  {exp.location}
                 </div>
                 {exp.current && (
                   <span

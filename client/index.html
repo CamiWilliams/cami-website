@@ -24,10 +24,20 @@
     </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      type="module"
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+
+    <script>
+      // Safely inject analytics only if the environment variables exist at runtime
+      const endpoint = "%VITE_ANALYTICS_ENDPOINT%";
+      const websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
+    
+      if (endpoint && !endpoint.startsWith('%')) {
+        const script = document.createElement('script');
+        script.defer = true;
+        script.src = `${endpoint}/umami`;
+        script.setAttribute('data-website-id', websiteId);
+        document.head.appendChild(script);
+      }
+    </script>
   </body>
 
 </html>

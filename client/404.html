@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Camryn Williams: Developer Advocate & Technical Leader</title>    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <meta name="description" content="Camryn Williams — Lead Developer Advocate at Meta. Over a decade of experience in developer relations, open source, and technical leadership." />
+    <meta property="og:title" content="Camryn Williams — Developer Advocate & Technical Leader" />
+    <meta property="og:description" content="Lead Developer Advocate at Meta. Open source, developer relations, and building communities that matter." />
+  </head>
+
+  <body>
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) { sessionStorage.removeItem('redirect'); history.replaceState(null, '', redirect); }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // Safely inject analytics only if the environment variables exist at runtime
+      const endpoint = "%VITE_ANALYTICS_ENDPOINT%";
+      const websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
+    
+      if (endpoint && !endpoint.startsWith('%')) {
+        const script = document.createElement('script');
+        script.defer = true;
+        script.src = `${endpoint}/umami`;
+        script.setAttribute('data-website-id', websiteId);
+        document.head.appendChild(script);
+      }
+    </script>
+  </body>
+
+</html>
